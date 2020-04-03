@@ -21,5 +21,14 @@ describe('vikings-names', () => {
 
       expect(vikingsNames.all).to.include(randomItem);
     });
+
+    it("should return an array of random item if passed a number", () => {
+      const randomItems = vikingsNames.random(3);
+      expect(randomItems).to.have.lengthOf(3);
+
+      randomItems.forEach(item => {
+        expect(vikingsNames.all).to.include(item);
+      });
+    });
   });
 });
