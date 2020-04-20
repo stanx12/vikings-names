@@ -5,7 +5,9 @@ cache:
   directories:
     - "node_modules"
 before_install:
-  - npm ci
+  - npm install npm
+before_script:
+  - npm prune
 script:
   - npm run test:single
 after_success:
